@@ -1,0 +1,114 @@
+.log-in-wrapper {
+  height: 100vh;
+  width: 100vw;
+  padding: 80px 40px;
+  @include for-phone-only {
+    padding: 20px 10px;
+  }
+}
+
+.log-in-content-left {
+  margin-right: 80px;
+  @include for-medium-devices-down {
+    margin-right: 40px;
+    @include for-phone-only {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+.log-in-container {
+  @include for-phone-only {
+    width: 100%;
+  }
+}
+
+.log-in-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sessions-new-form-container {
+  min-width: 500px;
+  padding: 20px;
+  background: white;
+  @include for-phone-only {
+    min-width: 100%;
+  }
+}
+
+.sessions-new-title {
+  margin-bottom: 20px;
+  color: #8A8A8A;
+  font-weight: bold;
+}
+
+.form-section {
+  padding: 10px 20px;
+  position: relative;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-control {
+  display: block;
+  height: 36px;
+  width: 100%;
+  border: none;
+  border-radius: 0 !important;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: 1px solid #757575;
+  position: relative;
+}
+
+.log-in-sub-title {
+  color: #8A8A8A;
+}
+
+.form-footer {
+  padding: 40px 20px;
+}
+
+.log-in-create-account {
+  padding-top: 80px;
+}
+
+.log-in-button {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin: 0;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  background-color: #8A8A8A;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.log-in-links {
+  color: #8A8A8A;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #8A8A8A;
+  &:hover {
+    color: #8A8A8A;
+    text-decoration: none;
+  }
+}
+
+.form-check-label {
+  color: #8A8A8A;
+  letter-spacing: 1px;
+}

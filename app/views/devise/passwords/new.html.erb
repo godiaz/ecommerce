@@ -1,18 +1,38 @@
-<h2>Forgot your password?</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+<div class="log-in-wrapper absCenter">
+  <div class="log-in-container">
+    <div class="log-in-content">
+      <div class="log-in-content-left">
+        <h5 class="sessions-new-title">FORGOTTEN YOUR PASSWORD?</h5>
+        <div class="sessions-new-form-container">
+          <div class="form-section">
+            <h6 class="log-in-sub-title"><strong>PASSWORD RECOVERY</strong></h6>
+          </div>
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <div class="form-section">
+                <%= f.input :email,
+                            required: true,
+                            autofocus: true,
+                            label: false,
+                            placeholder: "Email",
+                            input_html: { autocomplete: "email", class: "form-inputs form control" }, class: "form-inputs" %>
+              </div>
+            </div>
+            <div class="form-section absCenterSB form-footer">
+              <div class="form-actions">
+                <%= f.button :submit, "Send me reset password instructions", class: "log-in-button" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="log-in-create-account">
+        <h6 class="log-in-sub-title" style="margin-bottom: 20px;"><strong>DON'T HAVE AN ACCOUNT?</strong></h6>
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <%= link_to "CREATE ACCOUNT", new_registration_path(resource_name), class: "log-in-links" %><br />
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
