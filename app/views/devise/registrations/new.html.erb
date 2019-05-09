@@ -1,25 +1,46 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<div class="log-in-wrapper absCenter">
+  <div class="log-in-container">
+    <div class="log-in-content">
+      <div class="log-in-content-left" style="margin: 0;">
+        <h5 class="sessions-new-title">CREATE YOUR ACCOUNT</h5>
+        <div class="sessions-new-form-container">
+          <div class="form-section">
+            <h6 class="log-in-sub-title"><strong>YOU MAY PROCEED</strong></h6>
+          </div>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <div class="form-section">
+                <%= f.input :email,
+                            required: false,
+                            placeholder: "Email",
+                            label: false,
+                            input_html: { autocomplete: "email", class: "form-inputs form control" } %>
+              </div>
+              <div class="form-section">
+                <%= f.input :password,
+                            required: true,
+                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                            placeholder: "Password",
+                            label: false,
+                            input_html: { autocomplete: "current-password", class: "form-inputs" } %>
+              </div>
+              <div class="form-section">
+                <%= f.input :password_confirmation,
+                            required: true,
+                            label: false,
+                            placeholder: "Passowrd confirmation",
+                            input_html: { autocomplete: "new-password", class: "form-inputs form control" } %>
+              </div>
+            </div>
+            <div class="form-section absCenterSB form-footer">
+              <div class="form-actions">
+                <%= f.button :submit, "SIGN UP", class: "log-in-button" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
