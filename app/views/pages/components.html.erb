@@ -1,89 +1,123 @@
-<h1>COMPONENTS</h1>
+<div class="container">
+  <h1>COMPONENTS</h1>
 
-<h3>Product cards</h3>
+  <h3>Product cards</h3>
 
-<div class="product-card-container">
-<!--   <div class="product-card">
-    <div class="product-card-image-container">
-      <%#= image_tag 'shirt-guy.jpeg', class: "product-card-image" %>
-    </div>
-    <div class="product-card-content">
-      <p class="product-title">THE BIRSEYE FLANNEL SHIRT IN SKY BLUE</p>
-      <p class="product-material">100% Cotton</p>
-      <p class="product-price">$295</p>
-      <div class="shirt-fabrics-container">
-        <div class="shirt-fabrics">
+  <div class="product-card-container">
+  <!--   <div class="product-card">
+      <div class="product-card-image-container">
+        <%#= image_tag 'shirt-guy.jpeg', class: "product-card-image" %>
+      </div>
+      <div class="product-card-content">
+        <p class="product-title">THE BIRSEYE FLANNEL SHIRT IN SKY BLUE</p>
+        <p class="product-material">100% Cotton</p>
+        <p class="product-price">$295</p>
+        <div class="shirt-fabrics-container">
+          <div class="shirt-fabrics">
 
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div id="each_product" class="product-card">
+      <div class="product-card-image-container">
+        <%= image_tag 'shirt-guy.jpeg', id: "each_product_main_image", class: "product-card-image" %>
+      </div>
+      <div class="product-card-content">
+        <p class="product-title">THE BIRSEYE FLANNEL SHIRT IN SKY BLUE</p>
+        <p class="product-material">100% Cotton</p>
+        <p class="product-price">$295</p>
+        <div class="shirt-fabrics-container">
+          <div class="shirt-fabrics">
+            <%= image_tag 'fabric.png', class: "product-thumbnail" %>
+          </div>
+          <div class="shirt-fabrics">
+            <%= image_tag 'fabric.png', class: "product-thumbnail" %>
+          </div>
+          <div class="shirt-fabrics">
+            <%= image_tag 'fabric.png', class: "product-thumbnail" %>
+          </div>
+          <div class="shirt-fabrics">
+            <%= image_tag 'fabric.png', class: "product-thumbnail" %>
+          </div>
+          <div class="shirt-fabrics">
+            <%= image_tag 'fabric.png', class: "product-thumbnail" %>
+          </div>
+          <div class="shirt-fabrics"></div>
+          <div class="shirt-fabrics"></div>
+          <div class="shirt-fabrics"></div>
+          <div class="shirt-fabrics"></div>
+          <div class="shirt-fabrics"></div>
+          <div class="shirt-fabrics"></div>
+          <div class="shirt-fabrics"></div>
         </div>
       </div>
     </div>
-  </div> -->
-  <div id="each_product" class="product-card">
-    <div class="product-card-image-container">
-      <%= image_tag 'shirt-guy.jpeg', id: "each_product_main_image", class: "product-card-image" %>
-    </div>
-    <div class="product-card-content">
-      <p class="product-title">THE BIRSEYE FLANNEL SHIRT IN SKY BLUE</p>
-      <p class="product-material">100% Cotton</p>
-      <p class="product-price">$295</p>
-      <div class="shirt-fabrics-container">
-        <div class="shirt-fabrics">
-          <%= image_tag 'fabric.png', class: "product-thumbnail" %>
-        </div>
-        <div class="shirt-fabrics">
-          <%= image_tag 'fabric.png', class: "product-thumbnail" %>
-        </div>
-        <div class="shirt-fabrics">
-          <%= image_tag 'fabric.png', class: "product-thumbnail" %>
-        </div>
-        <div class="shirt-fabrics">
-          <%= image_tag 'fabric.png', class: "product-thumbnail" %>
-        </div>
-        <div class="shirt-fabrics">
-          <%= image_tag 'fabric.png', class: "product-thumbnail" %>
-        </div>
-        <div class="shirt-fabrics"></div>
-        <div class="shirt-fabrics"></div>
-        <div class="shirt-fabrics"></div>
-        <div class="shirt-fabrics"></div>
-        <div class="shirt-fabrics"></div>
-        <div class="shirt-fabrics"></div>
-        <div class="shirt-fabrics"></div>
+  <!--   <div class="product-card">
+      <div class="product-card-image-container">
+        <%#= image_tag 'shirt-guy.jpeg', class: "product-card-image" %>
       </div>
+      <div class="product-card-content">
+        <p class="product-title">THE BIRSEYE FLANNEL SHIRT IN SKY BLUE</p>
+        <p class="product-material">100% Cotton</p>
+        <p class="product-price">$295</p>
+        <div class="shirt-fabrics-container">
+          <div class="shirt-fabrics">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card-image-container">
+        <%#= image_tag 'shirt-guy.jpeg', class: "product-card-image" %>
+      </div>
+      <div class="product-card-content">
+        <p class="product-title">THE BIRSEYE FLANNEL SHIRT IN SKY BLUE</p>
+        <p class="product-material">100% Cotton</p>
+        <p class="product-price">$295</p>
+        <div class="shirt-fabrics-container">
+          <div class="shirt-fabrics">
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+  <div>
+    <h3>cards</h3>
+    <div class="card-links-container">
+      <%= link_to '#', class: "card-link" do %>
+        <div class="card-link-image-container">
+          <%= image_tag 'https://images.pexels.com/photos/1282309/pexels-photo-1282309.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', class: "card-link-image" %>
+        </div>
+        <div class="card-link-text">
+          <p>HOW IT WORKS</p>
+        </div>
+      <% end %>
+      <%= link_to '#', class: "card-link" do %>
+        <div class="card-link-image-container">
+          <%= image_tag 'https://images.pexels.com/photos/2249290/pexels-photo-2249290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', class: "card-link-image" %>
+        </div>
+        <div class="card-link-text">
+          <p>OUR FACTORIES</p>
+        </div>
+      <% end %>
     </div>
   </div>
-<!--   <div class="product-card">
-    <div class="product-card-image-container">
-      <%#= image_tag 'shirt-guy.jpeg', class: "product-card-image" %>
-    </div>
-    <div class="product-card-content">
-      <p class="product-title">THE BIRSEYE FLANNEL SHIRT IN SKY BLUE</p>
-      <p class="product-material">100% Cotton</p>
-      <p class="product-price">$295</p>
-      <div class="shirt-fabrics-container">
-        <div class="shirt-fabrics">
 
-        </div>
-      </div>
-    </div>
+  <div>
+    <h3>Buttons</h3>
+
+    <p>Primary</p>
+
+    <%= link_to 'SEE ALL', '#', class: "primary-button" %>
+
+    <p>Secondary</p>
+
+    <%= link_to 'NEW SHIRTS', '#', class: "secondary-button" %>
   </div>
-  <div class="product-card">
-    <div class="product-card-image-container">
-      <%#= image_tag 'shirt-guy.jpeg', class: "product-card-image" %>
-    </div>
-    <div class="product-card-content">
-      <p class="product-title">THE BIRSEYE FLANNEL SHIRT IN SKY BLUE</p>
-      <p class="product-material">100% Cotton</p>
-      <p class="product-price">$295</p>
-      <div class="shirt-fabrics-container">
-        <div class="shirt-fabrics">
-        </div>
-      </div>
-    </div>
-  </div> -->
 </div>
-
-<h3>Carousel</h3>
 
 <script>
 
