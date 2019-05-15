@@ -1,5 +1,7 @@
 .navbar {
-  padding: 1rem;
+  padding: 0 1rem;
+  height: 82px;
+
 }
 
 
@@ -18,4 +20,22 @@
 
 .nav-link {
   margin: 0 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 5px solid transparent;
+  transition: all 0.2s ease;
+  &:hover {
+    border-bottom: 5px solid $primary-grey;
+  }
+}
+
+.navbar-link-active {
+  background: $primary-grey;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-collapse, .navbar-nav {
+  height: 100%;
 }
