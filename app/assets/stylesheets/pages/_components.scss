@@ -8,6 +8,7 @@
   margin: 10px;
   width: 250px;
   outline: 5px solid transparent;
+  transition: all 0.3s ease;
   &:hover {
     outline: 5px solid $primary-grey;
     box-shadow: 0 0 15px $primary-grey
@@ -25,10 +26,13 @@
   flex: 0 0 calc(100% / 5 - 2 * 5px);
   margin: 5px;
   background: purple;
+  overflow: hidden;
 }
 
 .product-card-image {
   width: 100%;
+  transition: all 3s ease;
+
 }
 
 .product-card-content {
