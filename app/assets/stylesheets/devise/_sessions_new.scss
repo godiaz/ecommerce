@@ -1,5 +1,5 @@
 .log-in-wrapper {
-  height: 100vh;
+  min-height: calc(100vh - 282px);
   width: 100vw;
   padding: 80px 40px;
   @include for-phone-only {
@@ -41,7 +41,7 @@
 
 .sessions-new-title {
   margin-bottom: 20px;
-  color: #8A8A8A;
+  color: $primary-grey;
   font-weight: bold;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .log-in-sub-title {
-  color: #8A8A8A;
+  color: $primary-grey;
 }
 
 .form-footer {
@@ -93,22 +93,22 @@
   padding: 10px 20px;
   border: none;
   text-decoration: none;
-  background-color: #8A8A8A;
+  background-color: $primary-grey;
   color: white;
   letter-spacing: 2px;
 }
 
 .log-in-links {
-  color: #8A8A8A;
+  color: $primary-grey;
   letter-spacing: 2px;
-  border-bottom: 2px solid #8A8A8A;
+  border-bottom: 2px solid $primary-grey;
   &:hover {
-    color: #8A8A8A;
+    color: $primary-grey;
     text-decoration: none;
   }
 }
 
 .form-check-label {
-  color: #8A8A8A;
+  color: $primary-grey;
   letter-spacing: 1px;
 }

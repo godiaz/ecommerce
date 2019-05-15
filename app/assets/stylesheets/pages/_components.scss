@@ -9,8 +9,8 @@
   width: 250px;
   outline: 5px solid transparent;
   &:hover {
-    outline: 5px solid #8A8A8A;
-    box-shadow: 0 0 15px #8A8A8A
+    outline: 5px solid $primary-grey;
+    box-shadow: 0 0 15px $primary-grey
   }
 }
 
@@ -42,7 +42,7 @@
 }
 
 .product-title {
-  color: #8A8A8A;
+  color: $primary-grey;
   letter-spacing: 2px;
   padding: 0 10px;
   margin: 0;
