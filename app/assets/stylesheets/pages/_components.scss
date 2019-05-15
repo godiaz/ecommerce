@@ -11,7 +11,7 @@
   transition: all 0.3s ease;
   &:hover {
     outline: 5px solid $primary-grey;
-    box-shadow: 0 0 15px $primary-grey
+    box-shadow: 0 0 30px $primary-grey
   }
 }
 
@@ -67,3 +67,72 @@
   margin: 0;
   color: #BBBBBB;
 }
+
+// CARD LINKS CARDS
+
+.card-links-container {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+}
+
+.card-link {
+  margin: 10px;
+  width: 425px;
+  outline: 4px solid transparent;
+  transition: all 0.3s ease;
+  &:hover {
+    outline: 4px solid $primary-grey;
+    box-shadow: 0 0 30px $primary-grey
+  }
+}
+
+.card-link-image {
+  width: 100%;
+}
+
+.card-link-text {
+  background: white;
+  p {
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 4px;
+    color: $primary-grey;
+    padding: 10px 0;
+    margin: 0;
+  }
+}
+
+// PRIMARY BUTTON
+
+.primary-button {
+  background: $primary-grey;
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 3px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  &:hover {
+    background: #717171;
+    text-decoration: none;
+    color: white;
+
+  }
+}
+// SECONDARY BUTTON
+
+.secondary-button {
+  color: $primary-grey;
+  border: 2px solid $primary-grey;
+  padding: 10px 20px;
+  letter-spacing: 3px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  &:hover {
+    background: $primary-grey;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+
