@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_09_082917) do
+ActiveRecord::Schema.define(version: 2019_05_16_104935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fabrics", force: :cascade do |t|
+    t.string "name"
+    t.integer "weight"
+    t.string "mill"
+    t.string "origin"
+    t.string "color"
+    t.string "fabric_type"
+    t.text "about"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shirt_fabrics", force: :cascade do |t|
+    t.bigint "shirt_id"
+    t.bigint "fabric_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fabric_id"], name: "index_shirt_fabrics_on_fabric_id"
+    t.index ["shirt_id"], name: "index_shirt_fabrics_on_shirt_id"
+  end
+
+  create_table "shirts", force: :cascade do |t|
+    t.string "name"
+    t.string "collar"
+    t.string "cuff"
+    t.string "placket"
+    t.string "pocket"
+    t.string "contrast_collar"
+    t.text "about"
+    t.integer "price_cents"
+    t.string "sku"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +62,6 @@ ActiveRecord::Schema.define(version: 2019_05_09_082917) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "shirt_fabrics", "fabrics"
+  add_foreign_key "shirt_fabrics", "shirts"
 end
