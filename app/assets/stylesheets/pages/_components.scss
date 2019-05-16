@@ -1,3 +1,34 @@
+// HOMPAGE VIDEO    
+
+.home-video {
+  position: relative;
+}
+
+#video_home {
+  width: 100%;
+}
+
+.volume-logo {
+  height: 30px;
+  width: 30px;
+  opacity: 0.3;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
+
+.volume-toggle {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+// PRODUCT CARDS
+
 .product-card-container {
   display: flex;
   flex-wrap: wrap;
@@ -9,7 +40,11 @@
   width: 250px;
   outline: 5px solid transparent;
   transition: all 0.3s ease;
+  position: relative;
   &:hover {
+    .hover-image {
+      opacity: 1;
+    }
     outline: 5px solid $primary-grey;
     box-shadow: 0 0 30px $primary-grey
   }
@@ -29,10 +64,23 @@
   overflow: hidden;
 }
 
+.product-card-container {
+  position: relative;
+}
+
 .product-card-image {
   width: 100%;
   transition: all 3s ease;
+}
 
+.hover-image {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .product-card-content {
@@ -40,6 +88,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: white;
 }
 
 .product-card {
@@ -68,6 +117,32 @@
   color: #BBBBBB;
 }
 
+// SHOW PAGE FABRICS CARDS:
+
+.show-page-fabric-container {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.show-page-fabrics {
+  color: $primary-grey;
+  padding: 5px;
+  margin: 5px;
+  flex: 0 0 calc(100% / 4 - 10px);
+  height: 125px;
+}
+
+.fabric-style p {
+  margin: 0;
+}
+
+.fabrics-active {
+  background: $lighter-grey !important;
+  color: white !important;
+  box-shadow: 0 10px 40px 0 $primary-grey;
+}
+
 // CARD LINKS CARDS
 
 .card-links-container {
@@ -83,7 +158,7 @@
   transition: all 0.3s ease;
   &:hover {
     outline: 4px solid $primary-grey;
-    box-shadow: 0 0 30px $primary-grey
+    box-shadow: 0 0 30px $primary-grey;
   }
 }
 
@@ -103,7 +178,7 @@
   }
 }
 
-// PRIMARY BUTTON
+// BUTTONS
 
 .primary-button {
   background: $primary-grey;
@@ -116,10 +191,8 @@
     background: #717171;
     text-decoration: none;
     color: white;
-
   }
 }
-// SECONDARY BUTTON
 
 .secondary-button {
   color: $primary-grey;
@@ -133,6 +206,81 @@
     text-decoration: none;
     color: white;
   }
+}
+
+.shop-button {
+  box-shadow: 0 10px 40px 0 $primary-grey;
+  background: $primary-grey;
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 3px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+// CAROUSEL
+
+.carousel-container {
+  width: 53vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+
+.carousel-image {
+  max-width: 100%;
+  max-height: 90vh;
+}
+
+.carousel {
+  width: 40vw;
+}
+
+.carousel-item {
+}
+
+.carousel-control-prev, .carousel-control-next {
+  height: 60px;
+  width: 60px;
+  top: calc(50% - 30px);
+  opacity: 1;
+  &:hover {
+    opacity: 1;
+  }
+  &:focus {
+    opacity: 1;
+  }
+}
+
+// LINE BREAKS
+
+.product-line-break {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.line-break-info {
+  color: white;
+  background: $lighter-grey;
+  padding: 5px 20px;
+  font-size: 14px;
+}
+
+.line-break-line {
+    top: 50%;
+    display: inline-block;
+    flex: 1;
+    width: 100%;
+    height: 2px;
+    margin: 0 10px;
+    background-color: $lighter-grey;
 }
 
 
