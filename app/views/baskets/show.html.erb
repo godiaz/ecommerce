@@ -1,0 +1,5 @@
+<h3>Basket</h3>
+
+<%= @basket.basket_items.each do |item| %>
+  <p><%= item.shirt.name %> - <%= item.price %></p>
+<% end %>
