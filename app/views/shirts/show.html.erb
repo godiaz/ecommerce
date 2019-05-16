@@ -1,0 +1,7 @@
+<h3><%= @shirt.name %></h3>
+
+<%= link_to shirt_basket_items_path(@shirt), method: :post do %>
+  <div>
+    <h5>BUY NOW!</h5>
+  </div>
+<% end %>

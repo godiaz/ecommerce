@@ -1,0 +1,7 @@
+<div>
+  <ul>
+    <% @shirts.each do |shirt| %>
+      <li><%= link_to shirt.name, shirt_path(shirt) %> - <%= humanized_money_with_symbol shirt.price %></li>
+    <% end %>
+  </ul>
+</div>
