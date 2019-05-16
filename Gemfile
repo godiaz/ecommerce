@@ -15,10 +15,12 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'hotloader'
+gem 'money-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'hotloader'
+  gem 'faker'
 end
 
 group :development, :test do
