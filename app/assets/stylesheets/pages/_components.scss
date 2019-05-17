@@ -13,7 +13,7 @@
   width: 30px;
   opacity: 0.3;
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   left: 15px;
   &:hover {
     cursor: pointer;
@@ -91,9 +91,6 @@
   background: white;
 }
 
-.product-card {
-}
-
 .product-title {
   color: $primary-grey;
   letter-spacing: 2px;
@@ -115,6 +112,22 @@
   padding: 0 10px;
   margin: 0;
   color: #BBBBBB;
+}
+
+.remove-product {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  height: 30px;
+  width: 30px;
+  background: $lighter-grey;
+  border-radius: 50%;
+  cursor: pointer;
+  @include absCenter;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: $primary-grey;
+  }
 }
 
 // SHOW PAGE FABRICS CARDS:
@@ -217,6 +230,7 @@
   font-size: 16px;
   transition: all 0.3s ease;
   &:hover {
+    background: #717171;
     text-decoration: none;
     color: white;
   }
@@ -239,9 +253,6 @@
 
 .carousel {
   width: 40vw;
-}
-
-.carousel-item {
 }
 
 .carousel-control-prev, .carousel-control-next {
@@ -283,4 +294,25 @@
     background-color: $lighter-grey;
 }
 
+// CHECKOUT MODAL
 
+.checkout-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 30px;
+  background: #b8bec3;
+  h3 {
+    color: white;
+    margin: 0;
+  }
+}
+
+.underline-link {
+  color: $primary-grey;
+  border-bottom: 2px solid $primary-grey;
+  &:hover {
+    text-decoration: none;
+    color: $primary-grey;
+  }
+}
