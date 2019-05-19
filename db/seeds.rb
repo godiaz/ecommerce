@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+puts "OPERATION SEED IS A GO"
 puts 'Deleting Shirt Fabrics'
 ShirtFabric.destroy_all
 puts 'Deleting Shirts'
@@ -16,9 +16,9 @@ Fabric.destroy_all
 puts "Creating Shirts"
 10.times do
   Shirt.create(
-    name: Faker::Address.city,
+    name: "The #{Faker::Commerce.product_name} in #{Faker::Color.color_name}",
     collar: %w[short long].sample,
-    cuff: %w[short long].sample,
+    cuff: "100% #{Faker::Commerce.material}",
     placket: %w[yes no].sample,
     pocket: %w[none one two].sample,
     contrast_collar: %w[yes no].sample,
@@ -29,7 +29,7 @@ puts "Creating Shirts"
 end
 
 puts "Creating Fabrics"
-5.times do
+30.times do
   Fabric.create(
     name: Faker::Cannabis.strain,
     mill: Faker::Address.city,
@@ -42,12 +42,14 @@ end
 
 puts "Creating Shirt Fabrics"
 Shirt.all.each do |shirt|
-  Fabric.all.sample(rand(2..4)).each do |fabric|
+  Fabric.all.sample(rand(3..15)).each do |fabric|
     ShirtFabric.create(
       shirt: shirt,
       fabric: fabric
     )
   end
 end
+
+puts "OPERATION SEED COMPLETE"
 
 

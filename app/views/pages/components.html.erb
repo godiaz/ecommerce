@@ -21,65 +21,33 @@
   <h3>Product cards</h3>
 
   <div class="product-card-container">
-    <div id="each_product" class="product-card">
-      <div class="product-card-image-container">
-        <%= image_tag 'shirt-guy.jpeg', id: "each_product_main_image", class: "product-card-image" %>
-        <%= image_tag 'fabric.png', class: "product-card-image hover-image" %>
-      </div>
-      <div class="product-card-content">
-        <p class="product-title">THE BIRSEYE FLANNEL SHIRT IN SKY BLUE</p>
-        <p class="product-material">100% Cotton</p>
-        <p class="product-price">$295</p>
-        <div class="shirt-fabrics-container">
-          <div class="shirt-fabrics">
-            <%= image_tag 'fabric.png', class: "product-thumbnail" %>
-          </div>
-          <div class="shirt-fabrics">
-            <%= image_tag 'fabric.png', class: "product-thumbnail" %>
-          </div>
-          <div class="shirt-fabrics">
-            <%= image_tag 'fabric.png', class: "product-thumbnail" %>
-          </div>
-          <div class="shirt-fabrics">
-            <%= image_tag 'fabric.png', class: "product-thumbnail" %>
-          </div>
-          <div class="shirt-fabrics">
-            <%= image_tag 'fabric.png', class: "product-thumbnail" %>
-          </div>
-          <div class="shirt-fabrics"></div>
-          <div class="shirt-fabrics"></div>
-          <div class="shirt-fabrics"></div>
-          <div class="shirt-fabrics"></div>
-          <div class="shirt-fabrics"></div>
-          <div class="shirt-fabrics"></div>
-          <div class="shirt-fabrics"></div>
-        </div>
-      </div>
-    </div>
+    <% @shirts.each do |shirt| %>
+      <%= render 'components_shirts_card', shirt: shirt %>
+    <% end %>
   </div>
   <div>
     <h3>show page fabrics</h3>
     <div class="show-page-fabric-container">
       <div class="show-page-fabrics fabrics-active">
-        <%= image_tag 'fabric.png', style: "width: 100%; height: 80%;" %>
+        <%= image_tag @fabrics.sample, style: "width: 100%; height: 80%;" %>
         <div class="fabric-style">
           <p>Fabric Style</p>
         </div>
       </div>
       <div class="show-page-fabrics">
-        <%= image_tag 'fabric.png', style: "width: 100%; height: 80%;" %>
+        <%= image_tag @fabrics.sample, style: "width: 100%; height: 80%;" %>
         <div class="fabric-style">
           <p>Fabric Style</p>
         </div>
       </div>
       <div class="show-page-fabrics">
-        <%= image_tag 'fabric.png', style: "width: 100%; height: 80%;" %>
+        <%= image_tag @fabrics.sample, style: "width: 100%; height: 80%;" %>
         <div class="fabric-style">
           <p>Fabric Style</p>
         </div>
       </div>
       <div class="show-page-fabrics">
-        <%= image_tag 'fabric.png', style: "width: 100%; height: 80%;" %>
+        <%= image_tag @fabrics.sample, style: "width: 100%; height: 80%;" %>
         <div class="fabric-style">
           <p>Fabric Style</p>
         </div>
@@ -175,15 +143,6 @@
 
 <script>
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-          });
-      });
-  });
-
   const video = document.getElementById("video_home");
   const volumeOn = document.getElementById("volume_on");
   const volumeOff = document.getElementById("volume_off");
@@ -199,6 +158,7 @@
     volumeOff.classList.toggle("d-none");
     video.muted = true;
   });
+
 
   // productCard = document.getElementById('each_product');
   // productMainImage = document.getElementById('each_product_main_image');

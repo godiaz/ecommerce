@@ -1,0 +1,25 @@
+<div id="shirt_fabric_<%= shirt_fabric.id %>" class="shirt-fabrics" style="background: <%= shirt_fabric.fabric.color %>">
+  <%= image_tag @fabrics.sample, class: "product-thumbnail" %>
+</div>
+
+<script>
+
+  f = document.getElementById('shirt_fabric_<%= shirt_fabric.id %>');
+  s = document.getElementById('product_card_image_<%= shirt.id %>');
+  fabric_<%= shirt_fabric.id %>   = f.firstElementChild;
+  mainImageOne_<%= shirt.id %> = s.firstElementChild;
+  mainImageTwo_<%= shirt.id %> = s.lastElementChild;
+
+  srcOne_<%= shirt.id %> = mainImageOne_<%= shirt.id %>.src
+  srcTwo_<%= shirt.id %> = mainImageTwo_<%= shirt.id %>.src
+
+  fabric_<%= shirt_fabric.id %>.addEventListener('mouseover', () => {
+    mainImageOne_<%= shirt.id %>.src = fabric_<%= shirt_fabric.id %>.src;
+    mainImageTwo_<%= shirt.id %>.src = fabric_<%= shirt_fabric.id %>.src;
+  })
+  fabric_<%= shirt_fabric.id %>.addEventListener('mouseleave', () => {
+    mainImageOne_<%= shirt.id %>.src = srcOne_<%= shirt.id %>;
+    mainImageTwo_<%= shirt.id %>.src = srcTwo_<%= shirt.id %>;
+  })
+
+</script>
