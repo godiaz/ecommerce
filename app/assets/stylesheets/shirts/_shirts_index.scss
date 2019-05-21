@@ -1,0 +1,58 @@
+.shirts-index-banner {
+  height: 480px;
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  align-items: center;
+}
+
+.shirt-index-banner-content {
+  margin-left: 40px;
+}
+
+.shirt-index-banner-title {
+  color: white;
+  font-size: 60px;
+}
+
+.shirt-index-banner-button {
+  margin: 30px 0;
+}
+
+.shirt-index-category-tabs {
+  display: flex;
+  height: 45px;
+  width: 100%;
+}
+
+.shirt-index-tab {
+  border: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: $primary-grey;
+  background: white;
+  font-size: 14px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  letter-spacing: 1px;
+  &:hover {
+    border-bottom: 3px solid $primary-grey;
+  }
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.shirt-index-active {
+  background: $primary-grey;
+  color: white;
+}
+
+.shirt-index-tab-form {
+  flex: 1;
+}

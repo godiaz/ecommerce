@@ -1,0 +1,90 @@
+// PRODUCT CARDS
+
+.product-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.product-card {
+  margin: 10px;
+  width: 250px;
+  outline: 5px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  background-color: white;
+  &:hover {
+    text-decoration: none;
+    .hover-image {
+      opacity: 1;
+    }
+    outline: 5px solid $primary-grey;
+    box-shadow: 0 0 30px $primary-grey
+  }
+}
+
+.shirt-fabrics-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.shirt-fabrics {
+  height: 25px;
+  flex: 0 0 calc(100% / 5 - 2 * 5px);
+  margin: 5px;
+  overflow: hidden;
+}
+
+.product-card-container {
+  position: relative;
+}
+
+.product-card-image {
+  width: 100%;
+  transition: all 3s ease;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.product-card-content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+}
+
+.product-title {
+  color: $primary-grey;
+  letter-spacing: 2px;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.product-thumbnail {
+  width: 100%;
+}
+
+.product-price {
+  padding: 0 10px;
+  margin: 0;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  color: #111111;
+}
+
+.product-material {
+  padding: 0 10px;
+  margin: 0;
+  color: #BBBBBB;
+}
