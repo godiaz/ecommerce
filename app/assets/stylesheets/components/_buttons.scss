@@ -32,13 +32,16 @@
   box-shadow: 0 10px 40px 0 $primary-grey;
   background: $primary-grey;
   color: white;
-  padding: 10px 20px;
-  letter-spacing: 3px;
-  font-size: 16px;
+  padding: 15px 40px;
+  letter-spacing: 2px;
+  font-size: 14px;
   transition: all 0.3s ease;
   &:hover {
     text-decoration: none;
     color: white;
+  }
+  img {
+    margin-right: 15px;
   }
 }
 

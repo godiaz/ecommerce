@@ -1,17 +1,18 @@
 // SHOW PAGE FABRICS CARDS:
 
 .show-page-fabric-container {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .show-page-fabrics {
   color: $primary-grey;
   padding: 5px;
   margin: 5px;
-  flex: 0 0 calc(100% / 4 - 10px);
   height: 125px;
+  width: 125px;
 }
 
 .fabric-style p {
