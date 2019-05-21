@@ -1,4 +1,4 @@
-<div id="each_product" class="product-card">
+<%= link_to shirt_path(shirt), id: "each_product", class: "product-card" do %>
   <div id="product_card_image_<%= shirt.id %>" class="product-card-image-container">
     <%= image_tag "shirt-#{@num}.png", id: "each_product_main_image", class: "product-card-image" %>
     <%= image_tag @fabrics.sample, class: "product-card-image hover-image" %>
@@ -9,9 +9,9 @@
     <p class="product-price"><%= humanized_money_with_symbol(shirt.price) %></p>
     <div class="shirt-fabrics-container">
       <% shirt.shirt_fabrics.each do |shirt_fabric| %>
-        <%= render 'components_shirt_fabrics_card', shirt: shirt, shirt_fabric: shirt_fabric %>
+        <%= render 'shirt_fabrics_card', shirt: shirt, shirt_fabric: shirt_fabric %>
       <% end %>
     </div>
   </div>
-</div>
+<% end %>
 <% @num += 1 %>

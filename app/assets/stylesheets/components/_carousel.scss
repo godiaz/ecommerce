@@ -1,0 +1,35 @@
+
+// CAROUSEL
+
+.carousel-container {
+  width: 53vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+
+.carousel-image {
+  max-width: 100%;
+  max-height: 90vh;
+}
+
+.carousel {
+  width: 40vw;
+}
+
+.carousel-item {
+}
+
+.carousel-control-prev, .carousel-control-next {
+  height: 60px;
+  width: 60px;
+  top: calc(50% - 30px);
+  opacity: 1;
+  &:hover {
+    opacity: 1;
+  }
+  &:focus {
+    opacity: 1;
+  }
+}

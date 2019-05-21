@@ -1,7 +1,50 @@
-<div>
-  <ul>
-    <% @shirts.each do |shirt| %>
-      <li><%= link_to shirt.name, shirt_path(shirt) %> - <%= humanized_money_with_symbol shirt.price %></li>
-    <% end %>
-  </ul>
+<div class="shirts-index-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1549037173-e3b717902c57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
+  <div class="shirt-index-banner-content">
+    <h1 class="shirt-index-banner-title">Shirts Made From the Finest Fabrics</h1>
+    <div class="shirt-index-banner-button">
+      <%= link_to 'HOW IT WORKS', '#', class: "secondary-button button-white" %>
+    </div>
+  </div>
 </div>
+<div class="shirt-index-category-tabs">
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+    <%= hidden_field_tag :category, params[:category], value: "all"  %>
+    <%= submit_tag "ALL SHIRTS", class: "shirt-index-tab #{ (params[:category] == 'all' || !params[:category].present? ) ? 'shirt-index-active' : '' }" %>
+  <% end %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+    <%= hidden_field_tag :category, params[:category], value: "long"  %>
+    <%= submit_tag "LONG COLLAR", class: "shirt-index-tab #{ params[:category] == 'long' ? 'shirt-index-active' : '' }" %>
+  <% end %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+    <%= hidden_field_tag :category, params[:category], value: "short"  %>
+    <%= submit_tag "SHORT COLLAR", class: "shirt-index-tab #{ params[:category] == 'short' ? 'shirt-index-active' : '' }" %>
+  <% end %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+    <%= hidden_field_tag :category, params[:category], value: "none"  %>
+    <%= submit_tag "NO POCKETS", class: "shirt-index-tab #{ params[:category] == 'none' ? 'shirt-index-active' : '' }" %>
+  <% end %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+    <%= hidden_field_tag :category, params[:category], value: "one"  %>
+    <%= submit_tag "ONE POCKET", class: "shirt-index-tab #{ params[:category] == 'one' ? 'shirt-index-active' : '' }" %>
+  <% end %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+    <%= hidden_field_tag :category, params[:category], value: "two"  %>
+    <%= submit_tag "TWO POCKETS", class: "shirt-index-tab #{ params[:category] == 'two' ? 'shirt-index-active' : '' }" %>
+  <% end %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+    <%= hidden_field_tag :category, params[:category], value: "no"  %>
+    <%= submit_tag "WITH PLACKET", class: "shirt-index-tab #{ params[:category] == 'no' ? 'shirt-index-active' : '' }" %>
+  <% end %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+    <%= hidden_field_tag :category, params[:category], value: "yes"  %>
+    <%= submit_tag "WITHOUT PLACKET", class: "shirt-index-tab #{ params[:category] == 'yes' ? 'shirt-index-active' : '' }" %>
+  <% end %>
+</div>
+<div class="container">
+  <div class="product-card-container">
+    <% @shirts.each do |shirt| %>
+        <%= render 'shirts_card', shirt: shirt %>
+      <% end %>
+  </div>
+</div>
+

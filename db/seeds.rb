@@ -51,5 +51,3 @@ Shirt.all.each do |shirt|
 end
 
 puts "OPERATION SEED COMPLETE"
-
-
