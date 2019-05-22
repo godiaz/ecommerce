@@ -3,5 +3,6 @@ class BasketsController < ApplicationController
 
   def show
     @basket = find_basket
+    @num = 1
   end
 end

@@ -1,5 +1,48 @@
-<h3>Basket</h3>
-
-<%= @basket.basket_items.each do |item| %>
-  <p><%= item.shirt.name %> - <%= item.price %></p>
-<% end %>
+<div class="container">
+  <div class="basket-show-container">
+    <div class="basket-information">
+      <% @price = 0 %>
+      <% @basket.basket_items.each do |item| %>
+        <% @price += item.price %>
+      <% end %>
+      <h3>You have <span class="primary-grey"><%= @basket.basket_items.count %> </span> items in your basket totalling <span class="primary-grey"><%= humanized_money_with_symbol(@price) %></span></h1>
+      <div class="checkout-discount-container">
+        <%= link_to 'CHECKOUT', '#', class: "primary-button" %>
+        <%= form_tag basket_path, class: "form-discount" do %>
+        <%= text_field_tag :discount_code, params[:discount_code], { placeholder: "discount code", class: "form-control mr-3 pl-2" } %>
+        <%= submit_tag 'APPLY', { class: "secondary-button" } %>
+        <% end %>
+      </div>
+    </div>
+    <div class="basket-links">
+      <div class="button-holders">
+        <%= link_to 'HOW IT WORKS', '#', class: "secondary-button basket-link-buttons" %>
+      </div>
+      <div class="button-holders">
+        <%= link_to 'SHOP MORE PRODUCTS', shirts_path, class: "secondary-button basket-link-buttons" %>
+      </div>
+    </div>
+  </div>
+  <div class="product-card-container">
+    <% @basket.basket_items.each do |item| %>
+      <!-- <div class="product-basket-card-container"> -->
+        <div class="product-card">
+          <div id="product_card_image_<%= item.id %>" class="product-card-image-container">
+            <%= image_tag "shirt-#{@num}.png", id: "each_product_main_image", class: "product-card-image" %>
+          </div>
+          <div class="product-card-content">
+            <p class="product-title"><%= item.shirt.name.upcase %></p>
+            <p class="product-material"><%= item.shirt.cuff %></p>
+            <p class="product-price"><%= humanized_money_with_symbol(item.shirt.price) %></p>
+          </div>
+          <%= link_to basket_item_path(item), method: :delete do %>
+            <div class="remove-from-basket-button">
+              <%= image_tag 'cross.png', height: 20, width: 20 %>
+            </div>
+          <% end %>
+        </div>
+      <!-- </div> -->
+    <% end %>
+  </div>
+</div>
+<% @num += 1 %>

@@ -13,6 +13,9 @@ class BasketItemsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @basket_item = BasketItem.find(params[:id])
+    @basket_item.destroy
+    redirect_to basket_path
   end
 end
