@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-video">
+  <div class="player">
+    <%= video_tag "https://s3.eu-west-2.amazonaws.com/hoxtondigitalpublicassets/JamesWild/Origwolves_of_scotland_1280x676.mp4", class: "player__video viewer", id: "video_home", loop: true, autoplay: true, muted: true %>
+    <div class="video-logo-holder">
+      <div class="volume-toggle">
+        <%= image_tag "volume_on.png", class:"volume-logo d-none", id: "volume_on" %>
+        <%= image_tag "volume_off.png", class:"volume-logo", id: "volume_off" %>
+      </div>
+    </div>
+  </div>
+</div>

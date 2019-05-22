@@ -13,6 +13,12 @@
 .shirt-index-banner-title {
   color: white;
   font-size: 60px;
+  @include for-medium-devices-down {
+    font-size: 50px;
+  }
+  @include for-phone-only {
+    font-size: 40px;
+  }
 }
 
 .shirt-index-banner-button {
@@ -23,6 +29,7 @@
   display: flex;
   height: 45px;
   width: 100%;
+  overflow: scroll;
 }
 
 .shirt-index-tab {

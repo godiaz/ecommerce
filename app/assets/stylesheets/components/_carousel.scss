@@ -8,6 +8,10 @@
   top: 82px;
   display: flex;
   justify-content: center;
+  margin-left: 20px;
+  @include for-large-devices-down {
+    margin: 0;
+  }
 }
 
 
