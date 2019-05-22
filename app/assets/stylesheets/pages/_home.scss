@@ -1,6 +1,9 @@
 // Specific CSS for your home-page
 .home-shop-cards-container {
   display: flex;
+  @include for-small-devices-down {
+    flex-direction: column;
+  }
 }
 
 .home-shop-card-image {
@@ -26,4 +29,10 @@
   font-size: 18px;
   letter-spacing: 5px;
   background-color: rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.card-link + .card-link {
+  margin: 0;
+  margin: 10px;
 }
