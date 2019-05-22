@@ -33,6 +33,9 @@
   width: 100%;
   padding: 10px;
   justify-content: center;
+  @include for-small-devices-down {
+    flex-direction: column;
+  }
 }
 
 .card-link {
@@ -40,9 +43,13 @@
   width: 425px;
   outline: 4px solid transparent;
   transition: all 0.3s ease;
+  background: white;
   &:hover {
     outline: 4px solid $primary-grey;
     box-shadow: 0 0 30px $primary-grey;
+  }
+  @include for-small-devices-down {
+    width: auto;
   }
 }
 
