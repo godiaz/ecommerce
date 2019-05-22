@@ -1,1 +1,29 @@
 // Specific CSS for your home-page
+.home-shop-cards-container {
+  display: flex;
+}
+
+.home-shop-card-image {
+  width: 100%;
+}
+
+.home-shop-card {
+  margin: 15px;
+  position: relative;
+}
+
+.home-card-text-box {
+  border: 3px solid white;
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  top: 10%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 5px;
+  background-color: rgba(0,0,0,0.6);
+}

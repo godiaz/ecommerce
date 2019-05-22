@@ -41,3 +41,22 @@
 .navbar-collapse, .navbar-nav {
   height: 100%;
 }
+
+
+.basket-icon {
+  position: relative;
+}
+
+.notification-circle {
+  position: absolute;
+  background: $primary-grey;
+  border-radius: 50%;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15px;
+  width: 15px;
+  color: white;
+}

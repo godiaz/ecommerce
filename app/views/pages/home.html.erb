@@ -9,3 +9,73 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="product-line-break">
+    <div class="line-break-info">
+      NEW RELEASES
+    </div>
+    <div class="line-break-line"></div>
+  </div>
+  <div class="product-card-container">
+    <% @shirts.first(4).each do |shirt| %>
+        <%= render 'shirts/shirts_card', shirt: shirt %>
+      <% end %>
+  </div>
+  <div class="product-line-break">
+    <div class="line-break-info">
+      OUR PROCESS
+    </div>
+    <div class="line-break-line"></div>
+  </div>
+  <div class="card-links-container">
+    <%= link_to about_us_path, class: "card-link" do %>
+      <div class="card-link-image-container">
+        <%= image_tag 'https://images.pexels.com/photos/2249290/pexels-photo-2249290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', class: "card-link-image" %>
+      </div>
+      <div class="card-link-text">
+        <p>ABOUT US</p>
+      </div>
+    <% end %>
+    <%= link_to how_it_works_path, class: "card-link" do %>
+      <div class="card-link-image-container">
+        <%= image_tag 'https://images.pexels.com/photos/1282309/pexels-photo-1282309.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', class: "card-link-image" %>
+      </div>
+      <div class="card-link-text">
+        <p>HOW IT WORKS</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="product-line-break">
+    <div class="line-break-info">
+      SHOP
+    </div>
+    <div class="line-break-line"></div>
+  </div>
+  <div class="home-shop-cards-container">
+    <%= link_to '/shirts?utf8=✓&category=none&commit=NO+POCKETS' do %>
+      <div class="home-shop-card">
+        <%= image_tag 'https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', class: "home-shop-card-image" %>
+        <div class="home-card-text-box">
+          NO POCKETS
+        </div>
+      </div>
+    <% end %>
+    <%= link_to '/shirts?utf8=✓&category=one&commit=ONE+POCKET' do %>
+      <div class="home-shop-card">
+        <%= image_tag 'https://images.pexels.com/photos/1096849/pexels-photo-1096849.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', class: "home-shop-card-image" %>
+        <div class="home-card-text-box">
+          ONE POCKET
+        </div>
+      </div>
+    <% end %>
+    <%= link_to '/shirts?utf8=✓&category=two&commit=TWO+POCKETS' do %>
+      <div class="home-shop-card">
+        <%= image_tag 'https://images.pexels.com/photos/447186/pexels-photo-447186.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', class: "home-shop-card-image" %>
+        <div class="home-card-text-box">
+          TWO POCKETS
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
