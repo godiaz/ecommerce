@@ -3,8 +3,12 @@
 .product-card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 20px auto;
+  position: relative;
+  @include for-medium-devices-down {
+    justify-content: center;
+  }
 }
 
 .product-card {
@@ -38,7 +42,6 @@
 }
 
 .product-card-container {
-  position: relative;
 }
 
 .product-card-image {
@@ -87,4 +90,19 @@
   padding: 0 10px;
   margin: 0;
   color: #BBBBBB;
+}
+
+// FOR REMOVE FROM BASKET BUTTON
+
+.remove-from-basket-button {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  height: 30px;
+  width: 30px;
+  background: $primary-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }

@@ -1,0 +1,56 @@
+.basket-show-container {
+  display: flex;
+  margin-top: 100px;
+  justify-content: space-between;
+  align-items: center;
+  @include for-medium-devices-down {
+    justify-content: center;
+  }
+}
+
+.checkout-discount-container {
+  display: flex;
+  justify-content: space-between;
+  @include for-small-devices-down {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+.basket-information {
+  h3 {
+    margin-bottom: 40px;
+    @include for-medium-devices-down {
+      font-size: 24px;
+    }
+    @include for-phone-only {
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+}
+
+.basket-links {
+  @include for-medium-devices-down {
+    display: none;
+  }
+}
+
+.button-holders {
+  margin: 20px 0;
+}
+
+.basket-link-buttons {
+  height: 50px;
+  width: 100%;
+}
+
+.form-discount {
+  display: flex;
+  align-items: flex-end;
+  @include for-small-devices-down {
+    margin-bottom: 20px;
+  }
+}
