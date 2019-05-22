@@ -5,6 +5,9 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  @include for-phone-only {
+    justify-content: center;
+  }
 }
 
 .show-page-fabrics {
@@ -13,6 +16,10 @@
   margin: 5px;
   height: 125px;
   width: 125px;
+  @include for-medium-devices-down {
+    height: 100px;
+    width: 100px;
+  }
 }
 
 .fabric-style p {
