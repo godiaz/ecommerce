@@ -9,7 +9,11 @@
     <p class="product-price"><%= humanized_money_with_symbol(shirt.price) %></p>
     <div class="shirt-fabrics-container">
       <% shirt.shirt_fabrics.each do |shirt_fabric| %>
-        <%= render 'shirt_fabrics_card', shirt: shirt, shirt_fabric: shirt_fabric %>
+        <% if params[:controller] == "pages" && params[:action] == "home" %>
+          <%= render 'shirts/shirt_fabrics_card', shirt: shirt, shirt_fabric: shirt_fabric %>
+        <% else %>
+          <%= render 'shirt_fabrics_card', shirt: shirt, shirt_fabric: shirt_fabric %>
+        <% end %>
       <% end %>
     </div>
   </div>

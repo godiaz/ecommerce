@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   end
   resources :basket_items, only: [:destroy]
   get '/basket', to: 'baskets#show'
+  get '/about_us', to: 'pages#about_us'
+  get '/how_it_works', to: 'pages#how_it_works'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

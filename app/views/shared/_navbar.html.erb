@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to :root, class: "navbar-brand" do %>
     <%= image_tag "shirt-guy.png" %>
     <% end %>
 
@@ -33,14 +33,24 @@
           <%= link_to "ACCOUNT", "/", class: "nav-link" %>
         </li>
         <li>
-          <%= link_to "HOW IT WORKS", "/", class: "nav-link" %>
+          <%= link_to "HOW IT WORKS", how_it_works_path, class: "nav-link" %>
         </li>
         <li>
-          <%= link_to "ABOUT US", "/", class: "nav-link" %>
+          <%= link_to "ABOUT US", about_us_path, class: "nav-link" %>
         </li>
         <li style="margin-left: 30px;">
           <%= link_to basket_path, class: "nav-link" do %>
-            <%= image_tag 'basket.png', width: 25 %>
+              <% @basket = current_user&.basket || Basket.find(session[:basket_id]) %>
+              <% if @basket.basket_items.count > 0 %>
+                <div class="basket-icon">
+                  <%= image_tag 'basket.png', width: 25 %>
+                  <div class="notification-circle">
+                    <%= @basket.basket_items.count %>
+                  </div>
+                </div>
+              <% else %>
+                <%= image_tag 'basket.png', width: 25 %>
+              <% end %>
           <% end %>
         </li>
         <li>
