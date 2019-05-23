@@ -27,30 +27,20 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "SHOP", shirts_path, class: "nav-link" %>
+          <%= link_to "SHOP", shirts_path, class: "nav-link #{ params[:controller] == "shirts" ? "navbar-link-active" : "" }" %>
         </li>
         <li>
           <%= link_to "ACCOUNT", "/", class: "nav-link" %>
         </li>
         <li>
-          <%= link_to "HOW IT WORKS", how_it_works_path, class: "nav-link" %>
+          <%= link_to "HOW IT WORKS", how_it_works_path, class: "nav-link #{ params[:controller] == "pages" && params[:action] == "how_it_works" ? "navbar-link-active" : "" }" %>
         </li>
         <li>
-          <%= link_to "ABOUT US", about_us_path, class: "nav-link" %>
+          <%= link_to "ABOUT US", about_us_path, class: "nav-link #{ params[:controller] == "pages" && params[:action] == "about_us" ? "navbar-link-active" : "" }" %>
         </li>
         <li style="margin-left: 30px;">
           <%= link_to basket_path, class: "nav-link" do %>
-              <% @basket = current_user&.basket || Basket.find(session[:basket_id]) %>
-              <% if @basket.basket_items.count > 0 %>
-                <div class="basket-icon">
-                  <%= image_tag 'basket.png', width: 25 %>
-                  <div class="notification-circle">
-                    <%= @basket.basket_items.count %>
-                  </div>
-                </div>
-              <% else %>
-                <%= image_tag 'basket.png', width: 25 %>
-              <% end %>
+            <%= image_tag 'basket.png', width: 25 %>
           <% end %>
         </li>
         <li>

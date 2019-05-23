@@ -79,3 +79,21 @@
   </div>
 </div>
 
+<script>
+  const video = document.getElementById("video_home");
+  const volumeOn = document.getElementById("volume_on");
+  const volumeOff = document.getElementById("volume_off");
+
+  volumeOff.addEventListener('click', function() {
+    volumeOn.classList.toggle("d-none");
+    volumeOff.classList.toggle("d-none");
+    video.muted = false;
+  });
+
+  volumeOn.addEventListener('click', function() {
+    volumeOn.classList.toggle("d-none");
+    volumeOff.classList.toggle("d-none");
+    video.muted = true;
+  });
+</script>
+
