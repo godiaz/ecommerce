@@ -1,2 +1,21 @@
 productCardContainer = document.querySelector('.product-card-container');
 productCardContainer.innerHTML = "<% @shirts.each do |shirt| %><%= j render 'shirts_card', shirt: shirt %><% end %>";
+
+var f = document.getElementById('shirt_fabric_<%= shirt_fabric.id %>');
+var s = document.getElementById('product_card_image_<%= shirt.id %>');
+var fabric_<%= shirt_fabric.id %> = f.firstElementChild;
+var mainImageOne_<%= shirt.id %> = s.firstElementChild;
+var mainImageTwo_<%= shirt.id %> = s.lastElementChild;
+
+var srcOne_<%= shirt.id %> = mainImageOne_<%= shirt.id %>.src
+var srcTwo_<%= shirt.id %> = mainImageTwo_<%= shirt.id %>.src
+
+fabric_<%= shirt_fabric.id %>.addEventListener('mouseover', () => {
+mainImageOne_<%= shirt.id %>.src = fabric_<%= shirt_fabric.id %>.src;
+mainImageTwo_<%= shirt.id %>.src = fabric_<%= shirt_fabric.id %>.src;
+})
+
+fabric_<%= shirt_fabric.id %>.addEventListener('mouseleave', () => {
+mainImageOne_<%= shirt.id %>.src = srcOne_<%= shirt.id %>;
+mainImageTwo_<%= shirt.id %>.src = srcTwo_<%= shirt.id %>;
+})
