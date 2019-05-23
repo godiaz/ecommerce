@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_124830) do
+ActiveRecord::Schema.define(version: 2019_05_23_114152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,28 @@ ActiveRecord::Schema.define(version: 2019_05_16_124830) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "date_of_birth"
+    t.string "phone"
+    t.string "occupation"
+    t.integer "height"
+    t.integer "weight"
+    t.integer "shoe_size"
+    t.string "chest"
+    t.string "stomach"
+    t.string "arms"
+    t.string "seat"
+    t.string "thigh"
+    t.text "body_description"
+    t.string "preferred_fit"
+    t.string "dominant_hand"
+    t.integer "jacket_size"
+    t.integer "trouser_waist_size"
+    t.integer "shirt_collar_size"
+    t.text "shirt_notes"
+    t.text "jacket_notes"
+    t.text "trouser_notes"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -28,14 +28,16 @@
   border-bottom: 5px solid transparent;
   transition: all 0.2s ease;
   &:hover {
-    border-bottom: 5px solid $primary-grey;
+    border-bottom: 5px solid $darker-grey;
   }
 }
 
 .navbar-link-active {
-  background: $primary-grey;
-  color: white;
+  background: $darker-grey;
+  color: white !important;
   font-weight: bold;
+  margin: 0 !important;
+  padding: 23px !important;
 }
 
 .navbar-collapse, .navbar-nav {

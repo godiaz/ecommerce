@@ -7,35 +7,35 @@
   </div>
 </div>
 <div class="shirt-index-category-tabs">
-  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form", remote: true do  %>
     <%= hidden_field_tag :category, params[:category], value: "all"  %>
     <%= submit_tag "ALL SHIRTS", class: "shirt-index-tab #{ (params[:category] == 'all' || !params[:category].present? ) ? 'shirt-index-active' : '' }" %>
   <% end %>
-  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form", remote: true do  %>
     <%= hidden_field_tag :category, params[:category], value: "long"  %>
     <%= submit_tag "LONG COLLAR", class: "shirt-index-tab #{ params[:category] == 'long' ? 'shirt-index-active' : '' }" %>
   <% end %>
-  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form", remote: true do  %>
     <%= hidden_field_tag :category, params[:category], value: "short"  %>
     <%= submit_tag "SHORT COLLAR", class: "shirt-index-tab #{ params[:category] == 'short' ? 'shirt-index-active' : '' }" %>
   <% end %>
-  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form", remote: true do  %>
     <%= hidden_field_tag :category, params[:category], value: "none"  %>
     <%= submit_tag "NO POCKETS", class: "shirt-index-tab #{ params[:category] == 'none' ? 'shirt-index-active' : '' }" %>
   <% end %>
-  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form", remote: true do  %>
     <%= hidden_field_tag :category, params[:category], value: "one"  %>
     <%= submit_tag "ONE POCKET", class: "shirt-index-tab #{ params[:category] == 'one' ? 'shirt-index-active' : '' }" %>
   <% end %>
-  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form", remote: true do  %>
     <%= hidden_field_tag :category, params[:category], value: "two"  %>
     <%= submit_tag "TWO POCKETS", class: "shirt-index-tab #{ params[:category] == 'two' ? 'shirt-index-active' : '' }" %>
   <% end %>
-  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form", remote: true do  %>
     <%= hidden_field_tag :category, params[:category], value: "no"  %>
     <%= submit_tag "WITH PLACKET", class: "shirt-index-tab #{ params[:category] == 'no' ? 'shirt-index-active' : '' }" %>
   <% end %>
-  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form" do  %>
+  <%= form_tag shirts_path, :method => "get", class: "shirt-index-tab-form", remote: true do  %>
     <%= hidden_field_tag :category, params[:category], value: "yes"  %>
     <%= submit_tag "WITHOUT PLACKET", class: "shirt-index-tab #{ params[:category] == 'yes' ? 'shirt-index-active' : '' }" %>
   <% end %>
@@ -48,3 +48,13 @@
   </div>
 </div>
 
+<script>
+  tabs = document.querySelectorAll('.shirt-index-tab');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', (e) => {
+      document.querySelectorAll('.shirt-index-tab').forEach(function(tab) { tab.classList.remove('shirt-index-active') });
+      // tab.classlist.remove('shirt-index-active');
+      e.currentTarget.classList.add('shirt-index-active');
+    })
+  });
+</script>

@@ -1,0 +1,2 @@
+productCardContainer = document.querySelector('.product-card-container');
+productCardContainer.innerHTML = "<% @shirts.each do |shirt| %><%= j render 'shirts_card', shirt: shirt %><% end %>";
